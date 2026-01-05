@@ -1,18 +1,19 @@
 <!--
 Sync Impact Report
-- Version change: none → 1.0.0
+- Version change: 1.0.0 → 1.0.1
 - Modified / Added principles:
   - Simplicity & Readability → シンプルさと可読性
   - Type Safety (TypeScript Strict) → 型安全性（TypeScript必須）
   - Bilingual Documentation & Localization (EN/JA/ZH) → 二言語/多言語対応
   - PWA & Offline Resilience → PWAおよび不安定ネットワーク対応
   - Permissive Licensing & China Deployment → ライセンスと中国向けデプロイ要件
-- Added sections: Additional Constraints & Operational Requirements; Development Workflow & Quality Gates
+- Added sections: Additional Constraints & Operational Requirements; Development Workflow & Quality Gates; Operational Target: `.target` MultiGo
 - Removed sections: none
 - Templates updated: ✅ .specify/templates/plan-template.md (Constitution gates added)
                    ✅ .specify/templates/spec-template.md (Constitution alignment section added)
                    ✅ .specify/templates/tasks-template.md (Mandatory Phase 1 tasks added)
-- Follow-up TODOs: none
+- Templates requiring updates for this change: ⚠ .specify/templates/plan-template.md, .specify/templates/spec-template.md, .specify/templates/tasks-template.md (add operator/runbook/RBAC/backup checks - pending)
+- Follow-up TODOs: Add operator runbook and RBAC/backup verification checks to templates (TODO(OPERATOR_CHECKS))
 -->
 
 # Multigo Navigation Webapp Constitution
@@ -67,6 +68,30 @@ Dependencies and deployment choices MUST allow operation within China and use pe
 - PWA: Progressive Web App behavior is recommended for resilience on unstable networks.
 - Licenses: Use only permissive licenses for third-party OSS unless explicitly approved.
 
+### Operational Target: MultiGo at `.target` / 運用対象: `.target` の MultiGo
+This web application is explicitly intended to be used to operate and manage **MultiGo** instances deployed at the repository path `.target`. When a feature or change affects `.target` operations, the following non-negotiable requirements MUST be met:
+
+- **Operational Scope / 運用範囲**:
+  - The application supports operational actions including **deployment**, **configuration**, **monitoring**, **backup/restore**, and **operator workflows** for MultiGo instances in `.target`.
+
+- **Security & Access Control / セキュリティとアクセス制御**:
+  - All operator actions affecting `.target` MUST be protected by Role-Based Access Control (RBAC). RBAC policies and the expected roles MUST be documented in the feature spec.
+  - Audit logging MUST capture operator actions with timestamps, actor identifiers, and change summaries. Audit logs retention policy MUST be documented.
+
+- **Operational Runbooks & Backups / 運用手順とバックアップ**:
+  - Features that impact `.target` MUST include an operator runbook describing step-by-step procedures for common operations, rollbacks, and emergency recovery.
+  - A backup and restore verification plan for any `.target` stateful resources MUST be included and tested as part of integration testing.
+
+- **China Deployment & Network Constraints / 中国向け配置とネットワーク制約**:
+  - Any `.target` integration MUST document China compatibility and network constraints; dependencies blocked in China must be replaced or mitigated.
+
+- **Validation & Testing / 検証とテスト**:
+  - Changes affecting `.target` MUST include end-to-end validation steps executed against a staging `.target` environment (or a faithful emulation) and documented in the spec and PR.
+  - Operator flows MUST be verifiable both inside the DevContainer and from an external browser outside the DevContainer.
+
+- **Documentation / ドキュメント**:
+  - The spec MUST include a short "Operator Considerations" subsection describing RBAC, runbook location, backup plan, audit log retention, and staging `.target` validation steps.
+
 ## Development Workflow & Quality Gates / 開発ワークフローと品質ゲート
 - Pull requests MUST include: description of changes, tests, type-check results, and localization changes (if applicable).
 - CI gates MUST include: type-check, lint, unit tests for covered code, localization checks for P1 flows, and a license compliance check that detects disallowed copyleft dependencies.
@@ -85,5 +110,5 @@ Dependencies and deployment choices MUST allow operation within China and use pe
   - **PATCH**: Clarifications, wording fixes, and non-substantive edits — increment PATCH.
 - Compliance & Review: The project SHOULD run a governance compliance review at least annually and after any MAJOR/MINOR amendment.
 
-**Version**: 1.0.0 | **Ratified**: 2026-01-05 | **Last Amended**: 2026-01-05
+**Version**: 1.0.1 | **Ratified**: 2026-01-05 | **Last Amended**: 2026-01-05
 
