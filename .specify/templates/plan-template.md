@@ -39,6 +39,7 @@ The project MUST validate the following gates derived from the constitution befo
 - **Licensing**: New dependencies MUST be permissively licensed (MIT, Apache-2.0, BSD). Copyleft (e.g., GPL, AGPL) is disallowed unless explicit governance approval is recorded.
 - **China Deployment**: Plans MUST avoid services blocked in China (e.g., Google APIs) or provide China-compatible alternatives and deployment notes.
 - **DevContainer + External Testing**: DevContainer development MUST be available and the plan MUST include steps to validate behavior in an external browser outside the DevContainer.
+- **Operator / MultiGo Checks (when applicable)**: If the feature affects the repository's MultiGo installation (`.targets/multigo`), the plan MUST include an operator runbook, defined RBAC roles, backup/restore verification steps, audit log retention policy, and staging validation steps that exercise `.targets/multigo`.
 - **CI Gates**: Continuous Integration MUST run type-check, lint, unit tests, localization checks, and license checks.
 
 

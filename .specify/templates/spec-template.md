@@ -91,6 +91,12 @@ All specifications MUST include a short "Constitution alignment" section that do
 - **PWA / Offline** expectations for core user journeys (if applicable).
 - **Licensing constraints** for any proposed new dependency (must be permissive: MIT, Apache-2.0, BSD or require explicit approval).
 - **Platform targets** (PC, tablet) and any China deployment considerations (if applicable).
+- **Operator Considerations (when applicable)**: If the feature impacts the repository MultiGo (`.targets/multigo`), the spec MUST include an "Operator Considerations" subsection detailing:
+  - RBAC roles and permissions required (example: admin/operator/viewer).
+  - Location of operator runbook (preferably `.targets/multigo/README.md` or `docs/operators/`).
+  - Backup & restore plan and verification steps (include test artifacts or procedures).
+  - Audit log retention policy (e.g., number of days) and log fields to capture (timestamp, actor, summary).
+  - Staging validation steps that exercise `.targets/multigo` configuration and any emulation instructions.
 
 
 ### Functional Requirements
