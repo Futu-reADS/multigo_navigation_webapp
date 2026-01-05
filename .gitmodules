@@ -1,0 +1,3 @@
+[submodule ".targets/multigo"]
+	path = .targets/multigo
+	url = https://github.com/Futu-reADS/multigo_navigation_baseline
