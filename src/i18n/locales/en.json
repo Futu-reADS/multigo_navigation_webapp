@@ -1,0 +1,15 @@
+{
+  "login": {
+    "title": "Login",
+    "selectRoleLabel": "Select a role",
+    "proceed": "Proceed",
+    "validation": {
+      "required": "Please select at least one role"
+    }
+  },
+  "dashboards": {
+    "admin": "Admin Dashboard",
+    "nurse": "Nurse Dashboard",
+    "caregiver": "Caregiver Dashboard"
+  }
+}
