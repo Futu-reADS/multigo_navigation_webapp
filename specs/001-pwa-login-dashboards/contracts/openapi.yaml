@@ -1,0 +1,31 @@
+openapi: 3.0.3
+info:
+  title: 001-pwa-login-dashboards (placeholder)
+  version: 0.1.0
+paths:
+  /api/auth/login:
+    post:
+      summary: Placeholder for future backend login (not in-scope for Phase 1)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                role:
+                  type: string
+                  enum: [admin, nurse, caregiver]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  role:
+                    type: string
+                    enum: [admin, nurse, caregiver]
+
+# NOTE: This project is frontend-only in Phase 1. The above contract is a placeholder for future API design if server-side auth is added.
