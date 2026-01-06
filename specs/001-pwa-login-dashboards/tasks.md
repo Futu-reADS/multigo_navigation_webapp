@@ -27,7 +27,9 @@ This `tasks.md` organizes work by phases and user stories. Follow the checklist 
 
 ### User Story 1 (P1): Login → Dashboard transition
 
-Goal: Provide a Login page where user selects a role (radio/dropdown) and navigates to `/admin`, `/nurse`, or `/caregiver`.
+Goal: Provide a Login page where user selects a role (radio/dropdown) and navigates to `/admin`, `/nurse`, or `/caregiver` (roles: Admin/Nurse/Caregiver — 管理者/看護士/介護士).
+
+ゴール: ロール選択（ラジオ/セレクト）と `/admin`, `/nurse`, or `/caregiver` (ロール: Admin/Nurse/Caregiver — 管理者/看護士/介護士) への遷移をログインページが提供すること。
 
 - [X] T014 [US1] Create `src/pages/LoginPage.tsx` with role selection (radio or select) and a proceed button / ロール選択（ラジオ/セレクト）と進むボタンを持つ `src/pages/LoginPage.tsx` を作成する
 - [X] T015 [US1] Create dashboard pages: `src/pages/AdminDashboard.tsx`, `src/pages/NurseDashboard.tsx`, `src/pages/CaregiverDashboard.tsx` / `src/pages/AdminDashboard.tsx`, `src/pages/NurseDashboard.tsx`, `src/pages/CaregiverDashboard.tsx` を作成する

@@ -14,6 +14,7 @@ This feature is primarily frontend-only; minimal domain model is required for in
 - Validation:
   - `role` must be one of the three allowed values.
   - `displayName` optional and limited to 100 chars.
+- Role label mapping (for documentation / UI): `admin` = Admin, `nurse` = Nurse, `caregiver` = Caregiver
 
 ### ユーザー
 - 目的: クライアント側のルーティングや UI のために、現在選択されたユーザーのロールを表現します。
@@ -23,6 +24,7 @@ This feature is primarily frontend-only; minimal domain model is required for in
 - 検証:
   - `role` は上記 3 種類のいずれかであること。
   - `displayName` は任意で最大 100 文字程度を想定します。
+- ロール表記対応 (for documentation / UI): `admin` = 管理者, `nurse` = 看護士, `caregiver` = 介護士
 
 ### Dashboard (view)
 - Purpose: Route destinations and feature modules loaded per role.

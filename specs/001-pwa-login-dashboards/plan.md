@@ -9,7 +9,7 @@
 
 [Extract from feature spec: primary requirement + technical approach from research]
 
-概要: React + TypeScript ベースのシンプルな PWA を構築し、ログイン（ロール選択）から Admin/Nurse/Caregiver 各ダッシュボードへの遷移を提供します。PWA の基本（manifest と service worker）を満たし、ログインとダッシュボードの静的表示をオフラインで表示できるようにします。
+概要: React + TypeScript ベースのシンプルな PWA を構築し、ログイン（ロール選択）から Admin/Nurse/Caregiver（管理者 / 看護士 / 介護士）各ダッシュボードへの遷移を提供します。PWA の基本（manifest と service worker）を満たし、ログインとダッシュボードの静的表示をオフラインで表示できるようにします。
 
 ## Technical Context
 
