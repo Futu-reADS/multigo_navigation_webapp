@@ -42,7 +42,7 @@ test('routes are available while offline (cached by service worker)', async ({ p
 
   // wait for service worker to register
   await page.waitForFunction(() => {
-    // @ts-ignore
+    // @ts-expect-error navigator.serviceWorker may be undefined in the test environment
     return navigator.serviceWorker && navigator.serviceWorker.getRegistrations().then(r => r.length > 0)
   }, null, { timeout: 5000 })
 
