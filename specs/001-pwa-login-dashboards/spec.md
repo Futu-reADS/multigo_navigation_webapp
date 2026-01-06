@@ -166,9 +166,3 @@
 ---
 
 **Next step / 次のステップ**: Spec has been updated to reflect the user's choices for role input method and offline target. If you'd like, I can now scaffold the project files (initial PWA template, `src/` layout, and `.gitignore`) and open a PR, or proceed to planning (`/speckit.plan`).
----
-
-**Next step / 次のステップ**: Spec has been updated to reflect the user's choices for role input method and offline target. If you'd like, I can now scaffold the project files (initial PWA template, `src/` layout, and `.gitignore`) and open a PR, or proceed to planning (`/speckit.plan`).
----
-
-**次のステップ / Next step**: Spec has been updated to reflect the user's choices for role input method and offline target. If you'd like, I can now scaffold the project files (initial PWA template, `src/` layout, and `.gitignore`) and open a PR, or proceed to planning (`/speckit.plan`).
