@@ -2,8 +2,8 @@ import { test, expect } from '@playwright/test'
 
 const roles = [
   { value: 'admin', route: '/admin', heading: '管理者ダッシュボード' },
-  { value: 'nurse', route: '/nurse', heading: '看護師ダッシュボード' },
-  { value: 'caregiver', route: '/caregiver', heading: '介護者ダッシュボード' }
+  { value: 'nurse', route: '/nurse', heading: '看護士ダッシュボード' },
+  { value: 'caregiver', route: '/caregiver', heading: '介護士ダッシュボード' }
 ]
 
 for (const r of roles) {
