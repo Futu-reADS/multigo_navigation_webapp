@@ -9,9 +9,13 @@
 
 [Extract from feature spec: primary requirement + technical approach from research]
 
+概要: React + TypeScript ベースのシンプルな PWA を構築し、ログイン（ロール選択）から Admin/Nurse/Caregiver 各ダッシュボードへの遷移を提供します。PWA の基本（manifest と service worker）を満たし、ログインとダッシュボードの静的表示をオフラインで表示できるようにします。
+
 ## Technical Context
 
 **Language/Version**: React 18 + TypeScript (target TypeScript ^5.x), Node.js 18+ (LTS). `tsconfig.json` will enforce `strict: true` per constitution.
+
+**言語/バージョン**: React 18 + TypeScript（TypeScript ^5.x 想定）、Node.js 18+（LTS）。憲法に従い `tsconfig.json` に `strict: true` を設定します。
 
 **Primary Dependencies**:
 - React (v18)
@@ -23,21 +27,34 @@
 - Lint/Format: ESLint + Prettier + TypeScript ESLint rules
 - CI checks: GitHub Actions (type-check, lint, unit, e2e, localization checks, license checks)
 
+主要依存関係の要約: React、React Router、Vite、`vite-plugin-pwa`、`i18next` を中心に採用し、テストは Vitest（単体）と Playwright（E2E）を使います。
 **Storage**: N/A (no backend in this phase). All state is in-browser (local state); future phases may add APIs.
+
+**ストレージ**: 本フェーズではバックエンドを持たず、状態はブラウザ側（ローカル）で保持します。将来的に API を追加する可能性があります。
 
 **Testing**: Unit tests (Vitest + RTL) for P1 flows (Login → Dashboard routes). E2E tests (Playwright) to validate PWA installability, offline cache behavior, and role-based navigation.
 
+**テスト**: P1 の主要フロー（ログイン→ダッシュボード）には Vitest + React Testing Library のユニットテストを追加し、Playwright による E2E でインストール可能性やオフライン挙動を確認します。
+
 **Target Platform**: Web (desktop and tablet prioritized; mobile optional). Supported browsers: Chromium-based, Firefox, and Safari (installability varies; document test matrix in `research.md`).
+
+**対象プラットフォーム**: Web（デスクトップとタブレットを優先、モバイルは任意）。サポート対象ブラウザは Chromium 系、Firefox、Safari。ただしインストール挙動はブラウザにより異なるため `research.md` にテストマトリクスを記載します。
 
 **Project Type**: Single web frontend (no backend in-scope for Phase 1). Repository will host a single frontend project (root `src/`) with clear `src/pages`, `src/features`, and `src/components` separation.
 
+**プロジェクト種別**: 単一のフロントエンドプロジェクト（Phase 1 ではバックエンドは対象外）。`src/pages`、`src/features`、`src/components` を分離して管理します。
+
 **Performance Goals**: Small app; prioritize correctness and fast load of core pages. Target: Login and dashboard initial render under 1s on modern desktop/tablet networks (to be validated in Phase 1). Marked as low priority for aggressive perf optimizations.
+
+**パフォーマンス目標**: 小規模アプリとして、正確性とコアページの高速表示を優先します。目標はログインとダッシュボードの初回レンダリングを 1 秒未満にすること（Phase 1 で検証）。
 
 **Constraints**:
 - Must be PWA-installable and provide offline-capable static views for Login and Dashboards.
 - Must use TypeScript `strict: true` and pass type-checks in CI.
 - Must avoid Google-hosted APIs (China compatibility requirement).
 - Use only permissive OSS licenses (MIT/Apache-2.0/BSD).
+
+**制約（要約）**: PWA インストール可能性、TypeScript の厳格化、China 互換性、許容ライセンスの採用などの条件を満たす必要があります。
 
 **Scale/Scope**: Small initial baseline (3 dashboards, no server-side features). Designed for extensibility (feature modules under `src/features/*`).
 
@@ -46,6 +63,7 @@
 - Precise PWA test matrix and installability expectations per browser (research task).
 - Preferred E2E test runner for PWA installability (Playwright vs alternatives) — Playwright is proposed but will be validated in Phase 0.
 
+**未確定事項（要約）**: P1 に必要な翻訳の範囲、ブラウザごとの PWA テスト要件、E2E ランナーの最終決定は Phase 0 の調査で確定します。
 
 ---
 
