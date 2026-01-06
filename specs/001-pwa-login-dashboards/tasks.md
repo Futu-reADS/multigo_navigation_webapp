@@ -61,7 +61,8 @@ Goal: Document and implement a folder structure that makes adding shared and rol
 ## Final Phase — Polish & Cross-cutting Concerns
 
 - [ ] T030 [P] Add full CI: type-check, lint, unit, e2e (playwright) and localization checks — file: `.github/workflows/ci.yml` / type-check, lint, unit, e2e, localization チェックを含むフル CI を `.github/workflows/ci.yml` に追加する
-- [ ] T031 [P] Add localization: populate `src/i18n/locales/en.json` & `src/i18n/locales/ja.json` with P1 strings; add TODO placeholder for ZH — files: `src/i18n/locales/*.json` / `src/i18n/locales/en.json` と `src/i18n/locales/ja.json` に P1 用の文字列を用意し、ZH は TODO プレースホルダを追加する
+- [X] T031 [P] Add localization: populate `src/i18n/locales/en.json` & `src/i18n/locales/ja.json` with P1 strings; add TODO placeholder for ZH — files: `src/i18n/locales/*.json` / `src/i18n/locales/en.json` と `src/i18n/locales/ja.json` に P1 用の文字列を用意し、ZH は TODO プレースホルダを追加する
+- [X] T032 [P] Add language switcher in UI to toggle between EN/JA and detect browser language on load (added `src/components/LanguageSwitcher.tsx` and i18n browser detection)
 - [ ] T032 [P] Add license-check job to CI and run license-checker locally — file: `.github/workflows/license.yml` and `package.json` scripts / ライセンスチェックジョブを CI に追加し、ローカルで `license-checker` を実行する（`.github/workflows/license.yml` と package.json スクリプト）
 - [ ] T033 [P] Add quickstart instructions for running locally and running Playwright E2E in `specs/001-pwa-login-dashboards/quickstart.md` / `specs/001-pwa-login-dashboards/quickstart.md` にローカル起動方法と Playwright E2E の実行手順を記載する
 - [ ] T034 [P] Final verification: run the full CI locally (or via GH Actions) and fix any blocking issues; ensure all tests pass — (no single file) / フル CI を実行してブロッキングな問題を解消し、すべてのテストが通ることを確認する

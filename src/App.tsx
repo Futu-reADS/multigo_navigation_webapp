@@ -4,10 +4,14 @@ import LoginPage from './pages/LoginPage'
 import AdminDashboard from './pages/AdminDashboard'
 import NurseDashboard from './pages/NurseDashboard'
 import CaregiverDashboard from './pages/CaregiverDashboard'
+import LanguageSwitcher from './components/LanguageSwitcher'
 
 export default function App() {
   return (
     <BrowserRouter>
+      <div style={{ display: 'flex', justifyContent: 'flex-end', padding: 12 }}>
+        <LanguageSwitcher />
+      </div>
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/admin" element={<AdminDashboard />} />
