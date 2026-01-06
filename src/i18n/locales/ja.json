@@ -1,0 +1,15 @@
+{
+  "login": {
+    "title": "ログイン",
+    "selectRoleLabel": "ロールを選択",
+    "proceed": "進む",
+    "validation": {
+      "required": "少なくとも1つのロールを選択してください"
+    }
+  },
+  "dashboards": {
+    "admin": "管理者ダッシュボード",
+    "nurse": "看護師ダッシュボード",
+    "caregiver": "介護者ダッシュボード"
+  }
+}
