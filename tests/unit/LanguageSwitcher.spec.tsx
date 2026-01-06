@@ -5,6 +5,7 @@ import { I18nextProvider } from 'react-i18next'
 import i18n from '../../src/i18n'
 import LanguageSwitcher from '../../src/components/LanguageSwitcher'
 import LoginPage from '../../src/pages/LoginPage'
+import { MemoryRouter } from 'react-router-dom'
 
 describe('LanguageSwitcher', () => {
   beforeEach(async () => {
@@ -14,8 +15,10 @@ describe('LanguageSwitcher', () => {
   it('switches between Japanese and English', async () => {
     render(
       <I18nextProvider i18n={i18n}>
-        <LanguageSwitcher />
-        <LoginPage />
+        <MemoryRouter>
+          <LanguageSwitcher />
+          <LoginPage />
+        </MemoryRouter>
       </I18nextProvider>
     )
 
